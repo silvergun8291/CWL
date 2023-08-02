@@ -1,0 +1,372 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CWL</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="" name="keywords" />
+        <meta content="" name="description" />
+
+        <!-- Favicon -->
+        <link href="{% static 'img/favicon.png' %}" rel="icon" />
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Libraries Stylesheet -->
+        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+            <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
+                <img src="{% static 'img/CWL_Logo.png' %}" width="40%" height="40%" />
+            </a>
+
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="tracking.html" class="nav-item nav-link">배송추적</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">분야별 활용</a>
+                        <div class="dropdown-menu fade-up m-0">
+                            <a href="#Section1" class="dropdown-item">의약품 유통</a>
+                            <a href="#Section1" class="dropdown-item">식품 유통</a>
+                            <a href="#Section1" class="dropdown-item">반도체 유통</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">테크놀로지</a>
+                        <div class="dropdown-menu fade-up m-0">
+                            <a href="#Section2" class="dropdown-item">패키징</a>
+                            <a href="#Section2" class="dropdown-item">데이터 로거</a>
+                            <a href="#Section2" class="dropdown-item">공급망 관리</a>
+                            <a href="#Section3" class="dropdown-item">운송 관리 시스템</a>
+                            <a href="#Section3" class="dropdown-item">물류 정보 시스템</a>
+                            <a href="#Section3" class="dropdown-item">창고 관리 시스템</a>
+                        </div>
+                    </div>
+                    <a href="why.html" class="nav-item nav-link">Why CWL</a>
+                    <a href="about.html" class="nav-item nav-link">About CWL</a>
+                    <a href="mailto:chilledwaylogistics@gmail.com" class="nav-item nav-link">문의하기</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Carousel Start -->
+        <div class="container-fluid p-0 pb-5">
+            <div class="owl-carousel header-carousel position-relative mb-5 owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(-3038px, 0px, 0px); transition: all 0s ease 0s; width: 7596px;">
+                        <div class="owl-item cloned" style="width: 1519.2px;">
+                            <div class="owl-carousel-item position-relative">
+                                <img class="img-fluid" src="/static/img/door_of_container.jpeg" alt="" />
+                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(6, 3, 21, 0.5);">
+                                    <div class="container">
+                                        <div class="row justify-content-start">
+                                            <div class="col-10 col-lg-8">
+                                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Best Cold Chain Logistics Service</h5>
+                                                <h1 class="display-3 text-white animated slideInDown mb-4"><span style="color: #5fadd7;">ChilledWay</span> Logistics</h1>
+                                                <p class="fs-5 fw-medium text-white mb-4 pb-2">ChilledWay Logistics는 데이터로거를 이용한 최상의 콜드 체인 유통 서비스를 제공합니다.</p>
+                                                <a href="about.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                                <a href="mailto:chilledwaylogistics@gmail.com" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item cloned" style="width: 1519.2px;">
+                            <div class="owl-carousel-item position-relative">
+                                <img class="img-fluid" src="/static/img/door_of_container.jpeg" alt="" />
+                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(6, 3, 21, 0.5);">
+                                    <div class="container">
+                                        <div class="row justify-content-start">
+                                            <div class="col-10 col-lg-8">
+                                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Best Cold Chain Logistics Service</h5>
+                                                <h1 class="display-3 text-white animated slideInDown mb-4"><span style="color: #5fadd7;">ChilledWay</span> Logistics</h1>
+                                                <p class="fs-5 fw-medium text-white mb-4 pb-2">ChilledWay Logistics는 데이터로거를 이용한 최상의 콜드 체인 유통 서비스를 제공합니다.</p>
+                                                <a href="about.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                                <a href="mailto:chilledwaylogistics@gmail.com" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-item active" style="width: 1519.2px;">
+                            <div class="owl-carousel-item position-relative">
+                                <img class="img-fluid" src="/static/img/door_of_container.jpeg" alt="" />
+                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(6, 3, 21, 0.5);">
+                                    <div class="container">
+                                        <div class="row justify-content-start">
+                                            <div class="col-10 col-lg-8">
+                                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Best Cold Chain Logistics Service</h5>
+                                                <h1 class="display-3 text-white animated slideInDown mb-4"><span style="color: #5fadd7;">ChilledWay</span> Logistics</h1>
+                                                <p class="fs-5 fw-medium text-white mb-4 pb-2">ChilledWay Logistics는 데이터로거를 이용한 최상의 콜드 체인 유통 서비스를 제공합니다.</p>
+                                                <a href="about.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                                <a href="mailto:chilledwaylogistics@gmail.com" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-nav disabled">
+                    <div class="owl-prev"><i class="bi bi-chevron-left"></i></div>
+                    <div class="owl-next"><i class="bi bi-chevron-right"></i></div>
+                </div>
+                <div class="owl-dots disabled"></div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+        <!-- Why Start -->
+        <div class="container-fluid overflow-hidden py-5 px-lg-0">
+            <div class="container about py-5 px-lg-0">
+                <div class="row g-5 mx-lg-0">
+                    <div class="col-lg-6 ps-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute img-fluid w-100 h-100" src="{% static 'img/package.jpeg' %}" style="object-fit: cover;" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
+                        <h6 class="text-secondary text-uppercase mb-3">Why CWL</h6>
+                        <h1 class="mb-5">국내 최고의 콜드 체인 물류 기업</h1>
+                        <p class="mb-5">
+                            저희는 물품만을 배송하지 않습니다.<br />
+                            차별화된 차세대 콜드체인 기술을 통해 고객님에게 신뢰와 가치를 전달합니다.
+                        </p>
+                        <div class="row g-4 mb-5">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <i class="fas fa-snowflake fa-3x dark-blue mb-3"></i>
+                                <h5>Cold Chain</h5>
+                                <style>
+                                    .dark-blue {
+                                        color: #2699fb;
+                                    }
+                                </style>
+                                <p class="m-0">고객님의 요구에 맞는 콜드체인 서비스를 제공합니다.</p>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                <i class="fa fa-shipping-fast fa-3x dark-blue mb-3"></i>
+                                <h5>Reliable Delivery</h5>
+                                <p class="m-0">철저한 추적 관리를 통한 신뢰성 있는 물류 서비스를 제공합니다.</p>
+                            </div>
+                        </div>
+                        <a href="about.html" class="btn btn-secondary py-3 px-5">Explore More</a>
+                        <style>
+                            .custom-btn {
+                                background-color: #5fadd7;
+                            }
+
+                            .custom-btn:hover,
+                            .custom-btn:focus,
+                            .custom-btn:active {
+                                background-color: #5f9bd7; /* 버튼의 각 상태에서 어두운 톤을 적용했습니다. 원하는 다른 색상으로 변경하세요. */
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 id="Section1" class="text-secondary text-uppercase">Our Service</h6>
+                    <h1 class="mb-5">Explore Our Service</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/pharmaceutical_distribution.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">의약품 유통</h4>
+                            <p>안전성이 중요한 의약품 산업에서는 적절한 온도 유지가 필수입니다. CWL의 콜드체인 유통을 통해 의약품의 품질과 안정성을 유지하여 안전한 치료를 제공하세요.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/food_distribution.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">식품 유통</h4>
+                            <p>식품을 안전하게 전달하기 위해 온도를 엄격하게 관리합니다. CWL의 콜드체인 시스템으로 신선한 식품을 유통하세요.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/semiconductor_distribution.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">반도체 유통</h4>
+                            <p>반도체 원료의 품절 유지를 위해서 소비자들에게 정확한 시기에 제공합니다. CWL의 콜드체인 유통으로 제조 공정에 필요한 냉각 작업에 안정성과 효율성을 유지하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        <!-- Technology Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 id="Section2" class="text-secondary text-uppercase">Our Technology</h6>
+                    <h1 class="mb-5">Explore Our Technology</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/packaging.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">패키징</h4>
+                            <p id="Section3">당신의 제품을 최적의 상태로 전달하기 위한 최고의 해결책, 콜드체인 패키징 시뮬레이션으로 보다 안정적이고 효율적인 물류를 경험하세요.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/data_logger.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">데이터 로거</h4>
+                            <p>제품의 온도를 실시간으로 모니터링하여 안정성을 보장합니다. 저희의 데이터로거를 통해 더욱 신뢰성있는 온도 관리의 혁신을 경험하세요.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/supply_chain_management.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">공급망 관리</h4>
+                            <p>원재료의 구매부터 최종 소비자에 이르기까지, 전체 물류 프로세스를 하나의 통합망에서 완벽하게 관리합니다. 경영의 효율과 투명성을 한 단계 더 높여, 빠르고 안정적인 제품 생산을 실현하세요.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/transport_management_system.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">운송 관리 시스템</h4>
+                            <p>수송부터 배송까지, 우리의 관리 시스템은 최적의 운송 수단 배정부터 일정 계획, 그리고 성과지표까지 모든 과정을 철저히 관리합니다. 고객에게 제품을 더 빠르고 효율적으로 전달하기 위한 완벽한 파트너를 경험하세요.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/information_management_system.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">물류 정보 시스템</h4>
+                            <p>모든 물류 과정을 세심하게 관리, 운송부터 보관, 포장에 이르기까지의 전반적인 프로세스를 효율적으로 최적화합니다. 물류 정보를 합리적이고 유기적으로 제공하여, 물류 비용을 크게 절감하고 서비스 품질을 높여, 더 나은 경영 환경을 구축하도록 도와드립니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="service-item p-4">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid" src="{% static 'img/warehouse_management_system.jpeg' %}" alt="" />
+                            </div>
+                            <h4 class="mb-3">창고 관리 시스템</h4>
+                            <p>창고의 시작부터 끝까지, 모든 활동을 철저히 관리하는 창고 통합 관리 시스템을 소개합니다. 입고부터 적치, 재고, 피킹, 출고까지의 전반적인 프로세스를 통합관리하여, 물류의 효율성과 운영능력을 최적화하고 향상시킵니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top:6rem;">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">주소</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>서울특별시 금천구 서부샛길 606</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>010-7761-2652</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>chilledwaylogistics@gmail.com</p>
+                        <div class="d-flex pt-2">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">분야별 활용</h4>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section1" style="color:white;">의약품 유통</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section1" style="color:white;">식품 유통</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section1" style="color:white;">반도체 유통</a></span>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">테크놀로지</h4>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section2" style="color:white;">패키징</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section2" style="color:white;">데이터 로거</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section2" style="color:white;">공급망 관리</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section3" style="color:white;">운송 관리 시스템</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section3" style="color:white;">물류 정보 시스템</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="#Section3" style="color:white;">창고 관리 시스템</a></span>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">퀵 링크</h4>
+                        <span style="color:white;"><a class="btn btn-link" href="why.html" style="color:white;">Why CWL</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="about.html" style="color:white;">About CWL</a></span>
+                        <span style="color:white;"><a class="btn btn-link" href="mailto:chilledwaylogistics@gmail.com" style="color:white;">문의하기</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            &copy; <a class="border-bottom" href="#">ChilledWay Logistics</a>, All Right Reserved.
+                            &nbsp;&nbsp;<!-- 간격을 추가 위한 공백 문자 -->
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            <a class="border-bottom" href="privacy.html" style="color: white; font-size: larger;">개인정보처리방침</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top" style="background-color: #5fadd7; border-color: #5fadd7;">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+        <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

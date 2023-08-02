@@ -1,0 +1,202 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tracking</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="" name="keywords" />
+        <meta content="" name="description" />
+
+        <!-- Favicon -->
+        <link href="{% static 'img/favicon.png' %}" rel="icon" />
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Libraries Stylesheet -->
+        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet" />
+
+        <!-- Bootstrap 추가 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+        <!-- Google Charts 추가 -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+
+    <body>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+            <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
+                <img src="{% static 'img/CWL_Logo.png' %}" width="40%" height="40%" />
+            </a>
+
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="tracking.html" class="nav-item nav-link">배송추적</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">분야별 활용</a>
+                        <div class="dropdown-menu fade-up m-0">
+                            <a href="/index.html#Section1" class="dropdown-item">의약품 유통</a>
+                            <a href="/index.html#Section1" class="dropdown-item">식품 유통</a>
+                            <a href="/index.html#Section1" class="dropdown-item">반도체 유통</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">테크놀로지</a>
+                        <div class="dropdown-menu fade-up m-0">
+                            <a href="/index.html#Section2" class="dropdown-item">패키징</a>
+                            <a href="/index.html#Section2" class="dropdown-item">데이터 로거</a>
+                            <a href="/index.html#Section2" class="dropdown-item">공급망 관리</a>
+                            <a href="/index.html#Section3" class="dropdown-item">운송 관리 시스템</a>
+                            <a href="/index.html#Section3" class="dropdown-item">물류 정보 시스템</a>
+                            <a href="/index.html#Section3" class="dropdown-item">창고 관리 시스템</a>
+                        </div>
+                    </div>
+                    <a href="why.html" class="nav-item nav-link">Why CWL</a>
+                    <a href="about.html" class="nav-item nav-link">About CWL</a>
+                    <a href="mailto:chilledwaylogistics@gmail.com" class="nav-item nav-link">문의하기</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Customized CSS for input field -->
+        <style>
+            /* 검색창 크기 조절 */
+            .form-control {
+                width: 30%;
+                height: calc(1.5em + 0.75rem + 2px);
+            }
+
+            /* 돋보기 아이콘 크기 조절 */
+            .input-group-text {
+                height: 100%;
+            }
+        </style>
+
+        <main>
+            <div class="container mt-5">
+                <h2 class="mb-4">배송 조회</h2>
+                <form class="mb-4" id="tracking-form" method="POST" action="{% url 'tracking' %}">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="contract_number" class="col-lg-2 col-form-label"> <i class="fas fa-truck"></i> 운송장 번호 </label>
+                        <div class="col-lg-10 input-group">
+                            <input type="text" id="contract_number" name="contract_number" class="form-control" placeholder="운송장 번호를 입력하세요" />
+                            <div class="input-group-append">
+                                <button type="submit" class="input-group-text">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <br />
+
+                <!-- 배송 조회 결과 테이블 추가 -->
+                <h2 class="mb-4">배송 조회 결과</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">배송 업체</th>
+                            <th scope="col">받는 업체</th>
+                            <th scope="col">계약 번호</th>
+                            <th scope="col">배송 내역</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultBody">
+                    </tbody>
+                </table>
+                <!-- 배송 내역 그래프 추가 방식 예시 -->
+                <div id="shipment_progress_chart" class="container mt-5"></div>
+            </div>
+        </main>
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">주소</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>서울특별시 금천구 서부샛길 606</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>010-7761-2652</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>chilledwaylogistics@gmail.com</p>
+                        <div class="d-flex pt-2"></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">분야별 활용</h4>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">의약품 유통</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">식품 유통</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">반도체 유통</a></span>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">테크놀로지</h4>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">패키징</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">데이터 로거</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">공급망 관리</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">운송 관리 시스템</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">물류 정보 시스템</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">창고 관리 시스템</a></span>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">퀵 링크</h4>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">Why CWL</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">About CWL</a></span>
+                        <span style="color: white;"><a class="btn btn-link" href="" style="color: white;">문의하기</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            &copy; <a class="border-bottom" href="#">ChilledWay Logistics</a>, All Right Reserved. &nbsp;&nbsp;<!-- 간격을 추가 위한 공백 문자 -->
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            <a class="border-bottom" href="privacy.html" style="color: white; font-size: larger;">개인정보처리방침</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top" style="background-color: #5fadd7; border-color: #5fadd7;">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+        <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
