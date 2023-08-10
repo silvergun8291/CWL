@@ -3,8 +3,8 @@ from django.db import models
 
 class Company(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=40, blank=True)
-    contract_number = models.CharField(max_length=16, unique=True, blank=True)
+    name = models.CharField(max_length=40, null=True)
+    contract_number = models.CharField(max_length=16, unique=True, null=True)
 
     class Meta:
         db_table = 'company'

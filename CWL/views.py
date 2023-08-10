@@ -20,12 +20,11 @@ def tracking(request):
         contract_number = request.POST['contract_number']
         contract = Contract.objects.filter(contract_number=contract_number).first()
 
-        package = Package.objects.filter(contract_number=contract_number).first()
-        package_number = package.package_number
+        if contract is not None:
+            package = Package.objects.filter(contract_number=contract_number).first()
+            package_number = package.package_number
+            package_log = PackageLog.objects.filter(package_number=package_number).first()
 
-        package_log = PackageLog.objects.filter(package_number=package_number).first()
-
-        if contract != None:
             return render(request, 'result.html', {'contract': contract, 'package': package, 'package_log': package_log})
         else:
             return render(request, 'result.html', {'error': '해당 계약 번호를 찾을 수 없습니다.'})
